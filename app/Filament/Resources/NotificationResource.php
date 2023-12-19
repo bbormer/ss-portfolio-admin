@@ -26,7 +26,7 @@ class NotificationResource extends Resource
 
     public static function canCreate(): bool
     {
-      return config('app.notification_create');
+      return config('custom.notification_create');
     }
 
     public static function form(Form $form): Form

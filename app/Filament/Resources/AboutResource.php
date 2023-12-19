@@ -24,7 +24,7 @@ class AboutResource extends Resource
 
     public static function canCreate(): bool
     {
-      return config('app.about_create');
+      return config('custom.about_create');
     }
     
     public static function form(Form $form): Form
