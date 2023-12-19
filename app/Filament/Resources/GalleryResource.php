@@ -50,17 +50,19 @@ class GalleryResource extends Resource
                     // ->step(10),
                     ->minValue(0),
                 Section::make('タイトル')
-                    ->description('改行は<br>を挿入')
+                    // ->description('改行は<br>を挿入')
                     ->columns(2)
                     ->schema([
                         TextInput::make('title-ja')
                             ->label('日本語')
+                            ->placeholder('改行は<br>を挿入')
                             ->required()
                             ->validationMessages([
                                 'required' => '必須です',
                         ]),
                         TextInput::make('title-en')
                             ->label('英語')
+                            ->placeholder('改行は<br>を挿入')
                             ->required(),
                     ]),
                 FileUpload::make('image')
@@ -102,14 +104,16 @@ class GalleryResource extends Resource
                         ->default(0),
                 ])->columns(2),
                 Section::make('仕様')
-                    ->description('改行は<br>を挿入')
+                    // ->description('改行は<br>を挿入')
                     ->columns(2)
                     ->schema([
                         TextInput::make('details-ja')
                             ->label('日本語')
+                            ->placeholder('改行は<br>を挿入')
                             ->required(),
                         TextInput::make('details-en')
                             ->label('英語')
+                            ->placeholder('改行は<br>を挿入')
                             ->required(),
                     ]),
             ]);

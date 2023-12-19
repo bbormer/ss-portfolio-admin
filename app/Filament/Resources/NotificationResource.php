@@ -46,7 +46,7 @@ class NotificationResource extends Resource
                     ->seconds(false)
                     ->native(false)
                     ->after('startTime')
-                    ->placeholder('お知らせ表示終了日・時刻')
+                    ->placeholder('お知らせ表示終了日・時刻（期限なしはスペースで）')
                     ->validationMessages([
                         'after' => '終了が開始以前です',
                     ]),
