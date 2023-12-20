@@ -36,17 +36,17 @@ class NotificationResource extends Resource
             ->schema([
                 DateTimePicker::make('startTime')
                     ->label(__('Start Date/Time'))
-                    ->nullable()
+                    ->required()
                     ->seconds(false)
                     ->native(false)
                     ->placeholder('お知らせ表示開始日・時刻')->default(today()),
                 DateTimePicker::make('endTime')
                     ->label(__('End Date/Time'))
-                    ->nullable()
+                    ->required()
                     ->seconds(false)
                     ->native(false)
                     ->after('startTime')
-                    ->placeholder('お知らせ表示終了日・時刻（期限なしはスペースで）')
+                    ->placeholder('お知らせ表示終了日・時刻）')
                     ->validationMessages([
                         'after' => '終了が開始以前です',
                     ]),
@@ -54,7 +54,7 @@ class NotificationResource extends Resource
                     ->nullable()
                     ->label('URL')
                     ->activeUrl()
-                    ->placeholder('お知らせで表示するURL')
+                    ->placeholder('お知らせで表示するURL（お知らせなしはスペースで）')
                     ->validationMessages([
                         'activeUrl' => 'URLが無効です',
                     ]),

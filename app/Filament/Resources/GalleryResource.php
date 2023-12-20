@@ -18,6 +18,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\GalleryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
