@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->sidebarCollapsibleOnDesktop()
-            ->brandName('bbormer31')
+            ->brandName('satomi suzuki')
             ->brandLogo(asset('images/Mr._Smiley_Face.svg'))
             ->darkModeBrandLogo(asset('images/Mr._Smiley_Face.svg'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
