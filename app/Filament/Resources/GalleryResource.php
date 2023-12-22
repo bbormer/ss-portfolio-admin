@@ -92,11 +92,13 @@ class GalleryResource extends Resource
                     TextInput::make('amount')
                         ->label('金額')
                         ->required()
+                        ->prefix('¥')
                         ->default(0)
                         ->numeric(),
                     TextInput::make('shipping')
                         ->label('送料')
                         ->required()
+                        ->prefix('¥')
                         ->numeric()
                         ->default(0),
                     Radio::make('availability')
