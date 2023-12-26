@@ -3,7 +3,7 @@
     // dd($data['image']);
     $image = $data['image'];
     if($image == null) {
-      echo "no image set";
+      $image = "";
     } else {
       $image = $image[array_key_first($image)];
     }
@@ -13,9 +13,18 @@
 {{-- {!! $image->temporaryUrl() !!} --}}
 {{-- <img src="{{ $image->temporaryUrl() }}"> --}}
 <div x-data class="flex flex-row flex-wrap justify-around items-start max-w-screen-lg  mx-auto mt-12">
-  <figure class="mx-auto">
-    <img src="{{ $image->temporaryUrl() }}" />
-  </figure>
+  
+    @if ($image == "")
+      <p class="text-center">missing image</p>
+    @elseif (is_string($image))
+      <figure class="mx-auto">
+        <img src="{{ 'https://setup.satomisuzuki.info/storage/'.$image }}" class="mb-30" />
+      </figure>
+    @else
+      <figure class="mx-auto">
+        <img src="{{ $image->temporaryUrl() }}" />
+      </figure>
+    @endif
     <div class="flex items-center justify-items-center text-center">
     {{-- <div class="hero-content text-center text-neutral-content"> --}}
       <div class="max-w-xl font-[300] text-xl font-ja">
@@ -33,4 +42,4 @@
       </div>
     </div>
     
-{{ is_string($image) }}
+{{-- {{ is_string($image) }} --}}
