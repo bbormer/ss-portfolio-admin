@@ -14,7 +14,7 @@ return [
 
         'default' => [
             'plugins' => 'advlist autoresize emoticons hr lists',
-            'toolbar' => 'undo redo removeformat | formatselect | italic | alignjustify alignright aligncenter alignleft |  hr | emoticons',
+            'toolbar' => 'undo redo removeformat | italic | alignjustify alignright aligncenter alignleft |  hr | emoticons',
             'upload_directory' => null,
         ],
         // 'default' => [

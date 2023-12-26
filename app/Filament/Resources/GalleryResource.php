@@ -70,15 +70,15 @@ class GalleryResource extends Resource
                             ->placeholder('改行は<br>を挿入')
                             ->required(),
                     ]),
-                FileUpload::make('image')
-                    ->required()
-                    ->label('画像ファイル')
-                    ->disk('public')
-                    ->directory('images')
-                    ->validationMessages([
-                        'activeUrl' => 'URLが無効です',
-                    ]),
-                Section::make('説明')
+                    FileUpload::make('image')
+                        ->required()
+                        ->label('画像ファイル')
+                        ->disk('public')
+                        ->directory('images')
+                        ->validationMessages([
+                            'activeUrl' => 'URLが無効です',
+                        ]),
+                    Section::make('説明')
                     ->description('改行はshift-returnで')
                     ->schema([
                         TinyEditor::make('desc-ja')
@@ -87,6 +87,10 @@ class GalleryResource extends Resource
                         TinyEditor::make('desc-en')
                             ->label('英語')
                             ->columnSpan('full'),
+                        \Filament\Forms\Components\Actions::make([
+                            \Filament\Forms\Components\Actions\Action::make('プレビュー')
+                            ->modalContent(view('filament.components.testing'))
+                        ])
                     ]),
                 Section::make()->schema([
                     TextInput::make('amount')
