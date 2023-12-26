@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\AvailabilityStatus;
 use Closure;
 use Filament\Forms;
 use Filament\Tables;
@@ -106,12 +107,13 @@ class GalleryResource extends Resource
                         ->numeric()
                         ->default(0),
                     Radio::make('availability')
-                        ->label('販売ステータス')
-                        ->options([
-                            -1 => 'not for sale',
-                            0 => 'sold',
-                            1 => 'for sale'
-                        ])
+                        ->label('ステータス')
+                        // ->options([
+                        //     -1 => 'not for sale',
+                        //     0 => 'sold',
+                        //     1 => 'for sale'
+                        // ])
+                        ->options(AvailabilityStatus::class)
                         ->default(0),
                 ])->columns(2),
                 Section::make('仕様')
@@ -148,6 +150,24 @@ class GalleryResource extends Resource
                     ->label('作品名（英語）')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('availability')
+                    ->label('ステータス')
+                    ->badge(),
+                    // ->color(fn (int $state): string => match ($state) {
+                    //     -1 => 'warning',
+                    //     0 => 'success',
+                    //     1 => 'danger',
+                    // })
+                    // ->label(fn (int $state): string => match ($state) {
+                    //     -1 => 'heroicon-m-pencil',
+                    //     0 => 'heroicon-m-eye',
+                    //     1 => 'heroicon-m-check',
+                    // })
+                    // ->icon(fn (int $state): string => match ($state) {
+                    //     -1 => 'heroicon-m-pencil',
+                    //     0 => 'heroicon-m-eye',
+                    //     1 => 'heroicon-m-check',
+                    // }),
                 ImageColumn::make('image')
                     // ->circular()
                     ->visibility('private')

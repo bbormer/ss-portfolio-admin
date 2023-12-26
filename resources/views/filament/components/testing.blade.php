@@ -9,10 +9,28 @@
     }
 @endphp
 
-TESTING!!!<br>
+
 {{-- {!! $image->temporaryUrl() !!} --}}
 {{-- <img src="{{ $image->temporaryUrl() }}"> --}}
+<div x-data class="flex flex-row flex-wrap justify-around items-start max-w-screen-lg  mx-auto mt-12">
+  <figure class="mx-auto">
+    <img src="{{ $image->temporaryUrl() }}" />
+  </figure>
+    <div class="flex items-center justify-items-center text-center">
+    {{-- <div class="hero-content text-center text-neutral-content"> --}}
+      <div class="max-w-xl font-[300] text-xl font-ja">
+        <h1 class="my-5 leading-[3.75rem] text-4xl font-xl text-red-500  {{ $data['title-ja'] != '' ? '' : 'text-red-600' }}">
+          {!! $data['title-ja'] != '' ? '' : 'title missing' !!}
+        </h1>
+        <div class="mb-10 text-xl text-gray-700 dark:text-gray-400">
+          {!! $data['details-ja'] ? $data['details-ja'] : 'details missing' !!}
+        </div>
+        <div class="mt-5 text-left text-xl text-gray-700 dark:text-gray-400">{!! $data['desc-ja'] !!}</div>
+        @if($data['availability'] == 0)
+          <p class="text-xl font-bold mt-10 !text-red-600 ">SOLD</p>
+        @endif
+        <div class="mb-10"> </div>
+      </div>
+    </div>
+    
 {{ is_string($image) }}
-<hr>
-{!! $data['desc-ja'] !!}
-{!! $data['desc-en'] !!}
