@@ -19,7 +19,7 @@
     <div class="flex items-center justify-items-center text-center">
     {{-- <div class="hero-content text-center text-neutral-content"> --}}
       <div class="max-w-xl font-[300] text-xl font-ja">
-        <h1 class="my-5 leading-[3.75rem] text-4xl font-xl text-red-500  {{ $data['title-ja'] != '' ? '' : 'text-red-600' }}">
+        <h1 class="my-5 leading-[3.75rem] text-4xl font-xl text-gray-500 dark:text-gray-400">
           {!! $data['title-ja'] != '' ? '' : 'title missing' !!}
         </h1>
         <div class="mb-10 text-xl text-gray-700 dark:text-gray-400">
