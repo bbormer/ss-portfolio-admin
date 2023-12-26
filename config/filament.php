@@ -78,4 +78,6 @@ return [
             // Pages\Dashboard::class, <-- delete or comment this line.
         ],
     ],
+    'google_fonts' => 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&M+PLUS+1p:wght@100&display=swap',
+
 ];
